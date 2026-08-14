@@ -1,0 +1,145 @@
+"use client";
+
+import { useState, type FormEvent } from "react";
+import Reveal from "./Reveal";
+import SectionHeading from "./SectionHeading";
+import { site, waLink } from "@/lib/site";
+
+const programs = ["Taekwondo", "Weapon Training", "Self-Defense", "Kids Classes", "Not sure yet"];
+
+export default function EnquiryForm() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [program, setProgram] = useState(programs[0]);
+  const [message, setMessage] = useState("");
+  const [sent, setSent] = useState(false);
+
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    const text = [
+      `New enquiry — ${site.brand}`,
+      `Name: ${name}`,
+      `Phone: ${phone}`,
+      `Interested in: ${program}`,
+      message ? `Message: ${message}` : null,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    window.open(waLink(text), "_blank", "noopener,noreferrer");
+    setSent(true);
+  }
+
+  return (
+    <section id="enquire" className="relative bg-ink py-20 sm:py-28 overflow-hidden">
+      <div className="absolute -bottom-32 left-1/2 h-[420px] w-[800px] -translate-x-1/2 rounded-full bg-crimson/10 blur-[150px]" />
+
+      <div className="relative mx-auto max-w-3xl px-5 sm:px-8">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Get Started"
+            title="Book Your Free Trial"
+            align="center"
+          />
+          <p className="mt-5 text-center text-base sm:text-lg text-muted max-w-xl mx-auto">
+            Fill this in and it opens WhatsApp with your details ready to send straight to{" "}
+            {site.instructor}. No spam, just a quick reply about class timings.
+          </p>
+        </Reveal>
+
+        <Reveal delay={100}>
+          <form
+            onSubmit={handleSubmit}
+            className="mt-10 grid grid-cols-1 gap-5 rounded-2xl border border-line bg-surface p-6 sm:grid-cols-2 sm:p-9"
+          >
+            <Field label="Full Name">
+              <input
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                type="text"
+                placeholder="Your name"
+                className="input"
+              />
+            </Field>
+
+            <Field label="Phone Number">
+              <input
+                required
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                type="tel"
+                placeholder="10-digit mobile number"
+                pattern="[0-9+\s-]{7,15}"
+                className="input"
+              />
+            </Field>
+
+            <Field label="Interested In" className="sm:col-span-2">
+              <select
+                value={program}
+                onChange={(e) => setProgram(e.target.value)}
+                className="input"
+              >
+                {programs.map((p) => (
+                  <option key={p} value={p}>
+                    {p}
+                  </option>
+                ))}
+              </select>
+            </Field>
+
+            <Field label="Message (optional)" className="sm:col-span-2">
+              <textarea
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                rows={3}
+                placeholder="Preferred timing, age of student, questions..."
+                className="input resize-none"
+              />
+            </Field>
+
+            <button
+              type="submit"
+              className="sm:col-span-2 mt-2 rounded-sm bg-crimson px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-paper transition-colors hover:bg-crimson-dim"
+            >
+              Send Enquiry via WhatsApp
+            </button>
+
+            {sent && (
+              <p className="sm:col-span-2 text-center text-sm text-gold">
+                WhatsApp is opening with your details — hit send there to reach us.
+              </p>
+            )}
+
+            <p className="sm:col-span-2 text-center text-xs text-muted">
+              Prefer to call?{" "}
+              <a href={site.phoneHref} className="text-paper underline underline-offset-2">
+                {site.phoneDisplay}
+              </a>
+            </p>
+          </form>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Field({
+  label,
+  children,
+  className = "",
+}: {
+  label: string;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <label className={`flex flex-col gap-2 ${className}`}>
+      <span className="text-xs font-semibold uppercase tracking-wider text-muted">
+        {label}
+      </span>
+      {children}
+    </label>
+  );
+}
