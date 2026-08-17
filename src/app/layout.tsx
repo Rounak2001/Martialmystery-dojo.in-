@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Anton, Inter } from "next/font/google";
 import JsFlag from "@/components/JsFlag";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const anton = Anton({
@@ -14,13 +15,17 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://martialmysterydojo.in";
+const title = "Martial Mystery Dojo | Taekwondo & Weapon Training in Lucknow";
+const description =
+  "Taekwondo, self-defense and traditional weapon training in Indira Nagar, Lucknow — led by instructor Harshit Tiwari. Book a free trial class today.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Martial Mystery Dojo | Taekwondo & Weapon Training in Lucknow",
-  description:
-    "Taekwondo, self-defense and traditional weapon training in Indira Nagar, Lucknow — led by instructor Harshit Tiwari. Book a free trial class today.",
+  title: {
+    default: title,
+    template: `%s | Martial Mystery Dojo`,
+  },
+  description,
   keywords: [
     "taekwondo lucknow",
     "martial arts lucknow",
@@ -30,17 +35,29 @@ export const metadata: Metadata = {
     "Indira Nagar martial arts",
     "Martial Mystery Dojo",
   ],
+  alternates: {
+    canonical: siteUrl,
+  },
   openGraph: {
-    title: "Martial Mystery Dojo | Taekwondo & Weapon Training in Lucknow",
-    description:
-      "Taekwondo, self-defense and traditional weapon training in Indira Nagar, Lucknow — led by instructor Harshit Tiwari.",
+    title,
+    description,
     url: siteUrl,
     siteName: "Martial Mystery Dojo",
-    images: ["/media/hero-group.jpg"],
+    images: [{ url: "/media/hero-group.jpg", width: 1200, height: 1260, alt: title }],
     locale: "en_IN",
     type: "website",
   },
-  robots: { index: true, follow: true },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/media/hero-group.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
 };
 
 export const viewport = {

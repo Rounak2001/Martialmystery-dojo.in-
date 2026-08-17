@@ -1,3 +1,8 @@
+// Update this once the site has a permanent domain (custom domain or the
+// vercel.app URL from the first deploy) — it feeds canonical links, the
+// sitemap, robots.txt, and Open Graph/JSON-LD metadata.
+export const siteUrl = "https://martialmysterydojo.in";
+
 export const site = {
   brand: "Martial Mystery Dojo",
   tagline: "Taekwondo & Traditional Weapon Training",
@@ -14,11 +19,9 @@ export const site = {
   mapsQuery: "New ABC Montessori School, Sector 9, Indira Nagar, Lucknow",
   mapsHref:
     "https://www.google.com/maps/search/?api=1&query=New+ABC+Montessori+School+Sector+9+Indira+Nagar+Lucknow",
-  // Placeholder handles — swap for the real profile URLs once the accounts are live.
   social: {
-    instagram: "https://instagram.com/martialmysterydojo",
-    facebook: "https://facebook.com/martialmysterydojo",
-    youtube: "https://youtube.com/@martialmysterydojo",
+    instagram: "https://www.instagram.com/martialmystery?igsh=bmM0aDVyNzFvZWRu",
+    youtube: "https://youtube.com/@martialmystery?si=ok1wOuR3UZTAOijZ",
   },
 };
 

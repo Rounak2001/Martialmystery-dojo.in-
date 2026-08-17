@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { site } from "@/lib/site";
 
 const links = [
@@ -31,9 +32,14 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8 py-4">
         <a href="#top" className="flex items-center gap-2.5 shrink-0">
-          <span className="grid h-9 w-9 place-items-center rounded-sm bg-crimson font-display text-lg text-paper">
-            M
-          </span>
+          <Image
+            src="/media/logo.png"
+            alt={`${site.brand} logo`}
+            width={480}
+            height={439}
+            priority
+            className="h-9 w-auto"
+          />
           <span className="font-display text-lg sm:text-xl uppercase tracking-wide text-paper leading-none">
             Martial Mystery <span className="text-gold">Dojo</span>
           </span>
