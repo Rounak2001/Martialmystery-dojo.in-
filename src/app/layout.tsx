@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Anton, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import JsFlag from "@/components/JsFlag";
 import "./globals.css";
 
@@ -57,6 +58,7 @@ export default function RootLayout({
       <body className={`${anton.variable} ${inter.variable} antialiased`}>
         <JsFlag />
         {children}
+        <Analytics />
       </body>
     </html>
   );
