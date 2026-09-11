@@ -21,40 +21,67 @@ const socials = [
 
 export default function Connect() {
   return (
-    <section className="bg-surface py-20 sm:py-28">
-      <div className="mx-auto max-w-4xl px-5 sm:px-8 text-center">
+    <section className="bg-surface py-16 sm:py-24 lg:py-28">
+      <div className="mx-auto max-w-4xl px-4 sm:px-8 text-center">
         <Reveal>
           <SectionHeading eyebrow="Stay Connected" title="Follow the Journey" align="center" />
-          <p className="mt-5 text-base sm:text-lg text-muted max-w-xl mx-auto">
-            Training clips, competition highlights and dojo updates — follow {site.brand} or
-            message {site.instructor} directly.
+          <p className="mt-4 text-sm sm:text-base text-muted max-w-xl mx-auto">
+            Action reels, competition highlights and dojo updates — follow {site.brand} on social media or message {site.instructor} directly.
           </p>
 
-          <div className="mt-9 flex items-center justify-center gap-4">
-            {socials.map((s) => (
-              <a
-                key={s.name}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={s.name}
-                className="grid h-14 w-14 place-items-center rounded-full border border-line bg-ink text-paper transition-colors hover:border-crimson hover:text-crimson"
-              >
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                  {s.icon}
-                </svg>
-              </a>
-            ))}
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4 max-w-2xl mx-auto">
+            {/* Instagram Card */}
             <a
-              href={waLink("Hi Harshit! I'd like to connect with Martial Mystery Dojo.")}
+              href={site.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="WhatsApp"
-              className="grid h-14 w-14 place-items-center rounded-full border border-line bg-ink text-paper transition-colors hover:border-[#25D366] hover:text-[#25D366]"
+              className="flex items-center sm:flex-col justify-center gap-3 rounded-2xl border border-line bg-ink p-4 sm:p-5 transition-all hover:border-[#E1306C] hover:shadow-lg hover:-translate-y-1 active:scale-95"
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Z" />
-              </svg>
+              <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-tr from-[#FD1D1D] via-[#E1306C] to-[#C13584] text-white">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  {socials[0].icon}
+                </svg>
+              </div>
+              <div className="text-left sm:text-center">
+                <p className="text-xs font-bold uppercase tracking-wider text-paper">Instagram</p>
+                <p className="text-[11px] text-muted">@martialmystery</p>
+              </div>
+            </a>
+
+            {/* YouTube Card */}
+            <a
+              href={site.social.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center sm:flex-col justify-center gap-3 rounded-2xl border border-line bg-ink p-4 sm:p-5 transition-all hover:border-[#FF0000] hover:shadow-lg hover:-translate-y-1 active:scale-95"
+            >
+              <div className="grid h-12 w-12 place-items-center rounded-xl bg-[#FF0000] text-white">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  {socials[1].icon}
+                </svg>
+              </div>
+              <div className="text-left sm:text-center">
+                <p className="text-xs font-bold uppercase tracking-wider text-paper">YouTube</p>
+                <p className="text-[11px] text-muted">@martialmystery</p>
+              </div>
+            </a>
+
+            {/* WhatsApp Direct */}
+            <a
+              href={waLink("Hi Utkarsh! I'd like to connect with Martial Mystery Dojo.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center sm:flex-col justify-center gap-3 rounded-2xl border border-line bg-ink p-4 sm:p-5 transition-all hover:border-[#25D366] hover:shadow-lg hover:-translate-y-1 active:scale-95"
+            >
+              <div className="grid h-12 w-12 place-items-center rounded-xl bg-[#25D366] text-white">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Z" />
+                </svg>
+              </div>
+              <div className="text-left sm:text-center">
+                <p className="text-xs font-bold uppercase tracking-wider text-paper">WhatsApp</p>
+                <p className="text-[11px] text-[#25D366] font-medium">Direct with Utkarsh</p>
+              </div>
             </a>
           </div>
         </Reveal>

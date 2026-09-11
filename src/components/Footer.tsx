@@ -3,11 +3,11 @@ import { site } from "@/lib/site";
 
 const links = [
   { href: "#about", label: "About" },
-  { href: "#training", label: "Weapon Training" },
+  { href: "#training", label: "Action Reels" },
   { href: "#programs", label: "Programs" },
-  { href: "#gallery", label: "Gallery" },
+  { href: "#gallery", label: "Gallery & Medals" },
   { href: "#location", label: "Location" },
-  { href: "#enquire", label: "Enquire" },
+  { href: "#enquire", label: "Book Free Trial" },
 ];
 
 export default function Footer() {

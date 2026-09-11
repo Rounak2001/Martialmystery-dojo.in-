@@ -20,7 +20,7 @@ export default function SectionHeading({
         {eyebrow}
       </span>
       <h2
-        className={`mt-3 font-display text-4xl sm:text-5xl md:text-6xl uppercase leading-[0.95] ${
+        className={`mt-3 font-display text-3xl sm:text-5xl md:text-6xl uppercase leading-[1.02] tracking-tight ${
           light ? "text-ink" : "text-paper"
         }`}
       >

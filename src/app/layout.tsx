@@ -17,7 +17,7 @@ const inter = Inter({
 
 const title = "Martial Mystery Dojo | Taekwondo & Weapon Training in Lucknow";
 const description =
-  "Taekwondo, self-defense and traditional weapon training in Indira Nagar, Lucknow — led by instructor Harshit Tiwari. Book a free trial class today.";
+  "Taekwondo, self-defense and traditional weapon training in Indira Nagar, Lucknow — led by instructor Utkarsh Tiwari. Book a free trial class today.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "martial arts lucknow",
     "weapon training lucknow",
     "self defense classes lucknow",
-    "Harshit Tiwari taekwondo",
+    "Utkarsh Tiwari taekwondo",
     "Indira Nagar martial arts",
     "Martial Mystery Dojo",
   ],

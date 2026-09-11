@@ -33,23 +33,26 @@ export default function Hero() {
           <div className="mt-8 flex flex-col sm:flex-row gap-3.5">
             <a
               href="#enquire"
-              className="rounded-sm bg-crimson px-7 py-3.5 text-center text-sm font-semibold uppercase tracking-wide text-paper shadow-[0_10px_30px_-8px_rgba(225,29,46,0.6)] transition-transform hover:-translate-y-0.5"
+              className="rounded-lg bg-crimson px-7 py-3.5 text-center text-sm font-bold uppercase tracking-wide text-paper shadow-[0_10px_30px_-8px_rgba(225,29,46,0.6)] transition-all hover:bg-crimson-dim hover:-translate-y-0.5 active:scale-[0.98]"
             >
               Book a Free Trial Class
             </a>
             <a
-              href={waLink("Hi Harshit! I'd like to book a free trial class.")}
+              href={waLink("Hi Utkarsh! I'd like to book a free trial class.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-sm border border-line bg-surface px-7 py-3.5 text-center text-sm font-semibold uppercase tracking-wide text-paper transition-colors hover:border-gold hover:text-gold"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-line bg-surface px-7 py-3.5 text-center text-sm font-bold uppercase tracking-wide text-paper transition-all hover:border-gold hover:text-gold active:scale-[0.98]"
             >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="text-[#25D366]">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Z" />
+              </svg>
               Chat on WhatsApp
             </a>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs sm:text-sm uppercase tracking-wide text-muted">
+          <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-2.5 text-xs sm:text-sm uppercase tracking-wide text-muted">
             <span className="flex items-center gap-2">
-              <DotIcon /> Kids &amp; Adults
+              <DotIcon /> Kids &amp; Adults (5+)
             </span>
             <span className="flex items-center gap-2">
               <DotIcon /> LDTA / UPTA Affiliated

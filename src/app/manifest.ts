@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: `${site.brand} — Taekwondo & Weapon Training, Lucknow`,
     short_name: site.brand,
     description:
-      "Taekwondo, self-defense and traditional weapon training in Indira Nagar, Lucknow, led by Harshit Tiwari.",
+      "Taekwondo, self-defense and traditional weapon training in Indira Nagar, Lucknow, led by Utkarsh Tiwari.",
     start_url: "/",
     display: "standalone",
     background_color: "#0a0a0c",

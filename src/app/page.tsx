@@ -22,7 +22,7 @@ export default function Home() {
     image: `${siteUrl}/media/hero-group.jpg`,
     logo: `${siteUrl}/media/logo.png`,
     description:
-      "Taekwondo, self-defense and traditional weapon training academy led by Harshit Tiwari, in Indira Nagar, Lucknow.",
+      `Taekwondo, self-defense and traditional weapon training academy led by ${site.instructor}, in Indira Nagar, Lucknow.`,
     address: {
       "@type": "PostalAddress",
       streetAddress: `${site.address.landmark}, ${site.address.line1}`,

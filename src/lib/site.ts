@@ -6,7 +6,7 @@ export const siteUrl = "https://martialmysterydojo.in";
 export const site = {
   brand: "Martial Mystery Dojo",
   tagline: "Taekwondo & Traditional Weapon Training",
-  instructor: "Harshit Tiwari",
+  instructor: "Utkarsh Tiwari",
   city: "Lucknow",
   address: {
     line1: "9/40, Arvindo Path Road, Sector 9",
